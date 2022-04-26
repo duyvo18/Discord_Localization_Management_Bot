@@ -10,6 +10,12 @@ class LocalizationManagementBot(discord.Client):
 
     async def on_message(self, message):
         print('Message from {0.author}: {0.content}'.format(message))
+        
+
+    class CommandHandler:
+        # TODO: u sure this is a good idea
+        pass
+        
 
 client = LocalizationManagementBot()
 client.run(TOKEN)

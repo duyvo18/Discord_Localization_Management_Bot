@@ -1,5 +1,5 @@
 """
-Configuration reader for Localization Management Bot.
+Configuration Reader for Localization Management Bot.
 
 Classes
 
