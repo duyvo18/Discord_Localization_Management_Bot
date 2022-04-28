@@ -86,6 +86,7 @@ class ConfigReader():
                 return admins_dict
 
         except OSError or ValueError as e:
+            # FIXME: should not stop User flow for Admin errors, print a warning instead
             raise e
 
     @staticmethod
