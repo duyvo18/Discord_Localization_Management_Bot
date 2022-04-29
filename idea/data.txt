@@ -65,18 +65,3 @@ queries
 
 
 
-timestamp
-	official
-	EN
-	VN
-		raw-title
-		raw-content
-		Message-Instances
-			Sth
-				message-id
-			Sth
-				message-id
-			...
-
-
-	...
