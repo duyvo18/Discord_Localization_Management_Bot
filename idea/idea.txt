@@ -21,3 +21,8 @@ Admin
 	/local
 		Send URL to local DB
 		practical? secure?
+
+
+	Post Browsing
+		if same User ID && browse command < 5'
+			then allow traverse page
