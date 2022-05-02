@@ -2,14 +2,12 @@ import discord
 
 from config_reader import ConfigReader
 
-TOKEN = ConfigReader.get_config("Tokens", "bot-token")
 
 class LocalizationManagementBot(discord.Client):
-    def __init__(self, TOKEN):
+    def __init__(self):
         intents = discord.Intents.all()
         discord.Client(intents=intents)
         super().__init__()
-        self.run(TOKEN)
 
     async def on_ready(self):
         print('Logged on as {0}!'.format(self.user))
@@ -27,4 +25,5 @@ class LocalizationManagementBot(discord.Client):
         pass
         
 if __name__ == '__main__':
-    LocalizationManagementBot(TOKEN)
+    client = LocalizationManagementBot()
+    client.run(ConfigReader.get_config("Tokens", "bot-token"))
