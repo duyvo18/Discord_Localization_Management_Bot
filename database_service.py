@@ -14,8 +14,6 @@ import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import firestore
 
-from config_reader import ConfigReader
-
 
 class DatabaseService:
     """
@@ -25,19 +23,15 @@ class DatabaseService:
     ---
 
     """
-
     def __init__(self) -> None:
         # Creating a temporary file for Firebase Admin Credential key
-        config_json = tempfile.NamedTemporaryFile(
-            delete=False, dir="./", encoding="utf-8", mode="w+"
-        )
+        config_json = tempfile.NamedTemporaryFile(delete=False,
+                                                  dir="./",
+                                                  encoding="utf-8",
+                                                  mode="w+")
         try:
             # Write credential key from config/env file
-            config_json.write(
-                ConfigReader.get_config(
-                    section="Tokens", key="google_credentials"
-                )
-            )
+            config_json.write(os.environ["GOOGLE_APPLICATION_CREDENTIALS"])
 
             # Seek to start and read the file
             config_json.seek(0)
@@ -49,8 +43,9 @@ class DatabaseService:
         finally:
             config_json.close()
             os.unlink(config_json.name)
-    
+
     # TODO: implement services
+
 
 if __name__ == "__main__":
     service = DatabaseService()

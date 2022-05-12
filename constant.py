@@ -2,7 +2,6 @@
 Constants for Localization Management Bot.
 """
 
-
 FAQ = r'/faq'
 
 LATEST = r'/latest'
@@ -32,3 +31,10 @@ EDIT_SELECT = r'/edit _'
 DELETE_SELECT = r'/delete _'
 
 LOCAL = r'/local'
+
+
+"""
+Contants for development phase.
+"""
+
+TEST_CHANNEL = 968450197581598723
