@@ -86,8 +86,7 @@ class ConfigReader():
                 return admins_dict
 
         except OSError or ValueError as e:
-            # FIXME: should not stop User flow for Admin errors, print a warning instead
-            raise e
+            print("\n> WARNING: Cannot read Admin file.\n")
 
     @staticmethod
     def get_config(section: str, key: str, path: str = None) -> str:
@@ -126,12 +125,11 @@ class ConfigReader():
         ret = config_parser.read(path, encoding='UTF-8')
 
         if ret != [path]:
-            raise OSError(
-                f"Cannot read config file at {path}.")
+            raise OSError(f"Cannot read config file at {path}.")
 
-        return config_parser.get(section=section, option=key, fallback=None)
+        return config_parser.get(section=section, option=key, raw=True, fallback=None)
 
 
 if __name__ == '__main__':
-    print(ConfigReader.get_config("Tokens", "bot-token"))
+    print(ConfigReader.get_config("Tokens", "bot_token"))
     print(ConfigReader.get_admins())
