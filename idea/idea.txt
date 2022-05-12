@@ -1,0 +1,28 @@
+Admin
+	Admin only channel for bot spam
+	Extract Admin region? Free access?
+
+	/add
+		DM unlocalized post browser <- Extracted from Announcement + Check DB
+		Send a copy of original post
+		Ask for formatted localization
+		Receive and update to DB
+		(Original ID --> Localized content + ID)
+	/delete
+		DM localized post browser
+		Receive selected post
+		Send copy of post, confirm delete
+		Remove messages + DM <- extract message ID from DB
+	/edit
+		DM localized post browser
+		Receive selected post
+		Send copy of post, confirm edit
+		Update messages + DM <- extract message ID from DB
+	/local
+		Send URL to local DB
+		practical? secure?
+
+
+	Post Browsing
+		if same User ID && browse command < 5'
+			then allow traverse page

@@ -1,0 +1,67 @@
+queries
+	UC 1
+		latest localized post content
+			root
+			News collection
+			latest timestamp Post collection
+			Regional documentation
+			rawContent key
+
+	UC 2
+		chronological title of localized post
+			root
+			PostType collection
+			sort timestamp
+			?
+				for each Post collection
+				Region documentation
+				rawTitle keys
+			?
+	
+	UC 4
+		specific localized post content
+			root
+			PostType collection
+			?
+				find Post collection <- timestamp as Post id?
+			?
+			Region document
+			rawContent keys
+	
+	UC 6
+		chronological title of official post
+			root
+			PostType collection
+			sort timestamp
+			?
+				for each Post collection
+				Region documentation
+				rawTitle keys
+			?
+
+	UC 8 9 10
+		add/edit specific post document
+			root
+			PostType collection
+			?
+				find Post collection <- timestamp as Post id?
+			?
+			Region document
+
+	UC 9 10
+		all message ids of a specific post
+			root
+			PostType collection
+			?
+				find Post collection <- timestamp as Post id?
+			?
+			Region document
+			Message-Instances collection
+			?
+				for all document
+				message-id key
+			?
+
+
+
+
